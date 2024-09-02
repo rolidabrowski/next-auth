@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import { UserButton } from "@/components/auth/user-button";
+import { UserButton } from "@/app/(auth)/components/user-button";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -24,7 +24,10 @@ export const Navbar = () => {
         >
           <Link href="/client">Client</Link>
         </Button>
-        <Button asChild variant={pathname === "/admin" ? "default" : "outline"}>
+        <Button
+          asChild
+          variant={pathname === "/admin" ? "default" : "outline"}
+        >
           <Link href="/admin">Admin</Link>
         </Button>
         <Button
